@@ -3,13 +3,13 @@
 
 <head>
     <title>Doe Sangue! Doe Vida!</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <img class="logo" src="./img/logo.png" alt="Imagem de DOE">
+        <img class="logo" src="./logo.png" alt="Imagem de DOE">
         <h2>A sua doação importa</h2>
         <p>Até 3 vidas com 1 doação</p>
         <p>Mais de 38.000 doações são necessárias todos os dias</p>
@@ -20,7 +20,7 @@
 
     <section class="form hide">
         <h2>Entre na lista de Doadores</h2>
-        <form action="/">
+        <form action="/" method="POST">
             <input type="text" name="name" placeholder="Nome Completo" />
             <input type="text" name="email" placeholder="E-mail" />
             <input type="text" name="blood" placeholder="Tipo sanguíneo" />
@@ -31,28 +31,20 @@
     <main>
         <h2>Ultimos <span>doadores</span></h2>
         <section class="donors">
+            {% for donor in donors %}
+
             <div class="donor">
-                <div class="blood">AB +</div>
-                <p>Diego Fernandes</p>
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
             </div>
-            <div class="donor">
-                <div class="blood">B -</div>
-                <p>Vitor Teixeira</p>
-            </div>
-            <div class="donor">
-                <div class="blood">O +</div>
-                <p>Fernando Rodrigues</p>
-            </div>
-            <div class="donor">
-                <div class="blood">A -</div>
-                <p>Cleiton Moreira</p>
-            </div>
+
+            {%endfor%}
         </section>
     </main>
     <footer>
         Com ❤ Orion Tech
     </footer>
-    <script src="./js/scripts.js"></script>
+    <script src="./scripts.js"></script>
 </body>
 
 </html>
