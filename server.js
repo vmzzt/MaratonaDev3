@@ -4,13 +4,13 @@ server.use(express.static('public'))
 server.use(express.urlencoded({ extended: true }))
 
 const Poll = require('pg').Poll
-const db = new Poll({
-    user: 'postgres',
-    password: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    database: 'doe'
-})
+// const db = new ({
+//     user: 'postgres',
+//     password: 'postgres',
+//     host: 'localhost',
+//     port: 5432,
+//     database: 'doe'
+// })
 
 //nunjucks
 const nunjucks = require('nunjucks');
@@ -20,11 +20,11 @@ nunjucks.configure("./", {
 })
 
 server.get("/", function(req, res) {
-    db.query("SELECT * FROM donors", function(err, result) {
-        if (err) return res.send("erro de banco de dados.")
-        const donors = result.row
-        return res.render("index.html", { donors })
-    })
+    // db.query("SELECT * FROM donors", function(err, result) {
+    //     if (err) return res.send("erro de banco de dados.")
+    //     const donors = result.row
+        return res.render("index.html")
+    // })
 
 })
 
