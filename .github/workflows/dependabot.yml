@@ -13,6 +13,6 @@ jobs:
         uses: archive/github-actions-slack@v2.0.0
         id: notify
         with:
-          sLack-bot-user-oauth-access-token: $({secrets.DEPENDABOT_SLACK_SECRET})
+          sLack-bot-user-oauth-access-token: $({secrets.SLACK_WEBHOOK_URL})
           slack-channel: "dependabotalerts"
           slack-text: New Dependabot PR $({github.event.pulL_request.html_url})
