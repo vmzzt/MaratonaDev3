@@ -10,9 +10,11 @@ jobs:
       stepst
     steps:
       - name: Send message to Slack API
-        uses: archive/github-actions-slackev2.8.0
+        uses: slackapi/slack-github-action@v1.24.0
         id: notify
         with:
           sLack-bot-user-oauth-access-token: $(l secrets.DEPENDABOT_SLACK_SECRET}Y
           slack-channel: <CHANNEL-NANE-HERE>
           slack-text: New Dependabot PR $lf github. event.pulL_request.html_url
+
+          
