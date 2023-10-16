@@ -10,7 +10,7 @@ jobs:
       stepst
     steps:
       - name: Send message to Slack API
-        uses: slackapi/slack-github-action@v1.24.0
+        uses: archive/github-actions-slack@2.0.0
         id: notify
         with:
           sLack-bot-user-oauth-access-token: $(l secrets.DEPENDABOT_SLACK_SECRET}Y
