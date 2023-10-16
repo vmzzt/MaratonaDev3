@@ -14,7 +14,7 @@ jobs:
         id: notify
         with:
           sLack-bot-user-oauth-access-token: $(l secrets.DEPENDABOT_SLACK_SECRET}Y
-          slack-channel: <CHANNEL-NANE-HERE>
+          slack-channel: "DependaBot_Alerts"
           slack-text: New Dependabot PR $lf github. event.pulL_request.html_url
 
           
